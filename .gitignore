@@ -1,11 +1,14 @@
+# Piper OS Build Artifacts (too large for GitHub)
+distro/work/
+distro/iso_staging/
+distro/piper-os-live.iso
 
-# Object files
+# Object files from old bare-metal kernel
 *.o
-
-# Executables and builds
-piper-os.iso
-isodir/boot/kernel.bin
 *.bin
+*.iso
+!distro/config/*
 
-# Other build artifacts
-# Add more if needed
+# System files
+.DS_Store
+Thumbs.db

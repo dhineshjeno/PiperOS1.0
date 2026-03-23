@@ -45,6 +45,12 @@ unsigned char kbdus[128] =
 
 extern void terminal_putchar(char c); // From kernel.c
 
+static int keyboard_printing_enabled = 0;
+
+void keyboard_enable(void) {
+    keyboard_printing_enabled = 1;
+}
+
 void keyboard_handler(registers_t *regs)
 {
     (void)regs;
@@ -65,7 +71,7 @@ void keyboard_handler(registers_t *regs)
         // Key press
         if (scancode < 128) {
             char c = kbdus[scancode];
-            if (c != 0) {
+            if (c != 0 && keyboard_printing_enabled) {
                 terminal_putchar(c);
             }
         }

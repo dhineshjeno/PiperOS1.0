@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piper OS - The Alternative to Windows and macOS</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Minimal Settings Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <!-- Pied Piper Custom Logo -->
+                <img src="logo.png" alt="Piper OS Logo" style="height: 36px; width: auto; margin-right: 8px;">
+                <span>PIPER OS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#overview" class="active">Overview</a></li>
+                <li><a href="#features">For Schools</a></li>
+                <li><a href="#pro">Pro</a></li>
+            </ul>
+            <a href="#download" class="btn btn-primary nav-btn">Download</a>
+        </div>
+    </nav>
+
+    <!-- Super Clean Zorin-Style Hero -->
+    <section class="hero" id="overview">
+        <div class="hero-content">
+            <div class="badge fade-in-up"><span>NEW</span> Upgrades from Piper OS 0.9 to 1.0 are now available &rsaquo;
+            </div>
+            <h1 class="fade-in-up delay-1">Make your computer<br><strong>better.</strong></h1>
+            <p class="fade-in-up delay-2">Piper OS is the alternative to Windows and macOS designed to make<br>your
+                computer faster, more powerful, secure, and privacy-respecting.</p>
+
+            <a href="#download" class="btn btn-action fade-in-up delay-3">Download Piper OS</a>
+        </div>
+
+        <div class="laptop-container fade-in-up delay-4">
+            <img class="laptop-img"
+                src="https://images.unsplash.com/photo-1629654229648-52261ce8d0ad?q=80&w=1200&auto=format&fit=crop"
+                alt="Piper OS Desktop Environment">
+        </div>
+    </section>
+
+    <!-- Speed Section -->
+    <section class="feature speed-feature" id="features">
+        <div class="feature-content">
+            <div class="text-block slide-right">
+                <h2>Less <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="inline-logo">
+                        <path d="M4 4h9a6 6 0 0 1 0 12h-5v4H4V4z" fill="#9ca3af" />
+                    </svg><br><strong>More Speed.</strong></h2>
+                <p>Your computer should work as fast as you do. Piper OS runs lightning quick and doesn't slow down over
+                    time. Apps open fast, so you can spend more time being productive.</p>
+            </div>
+            <div class="image-block slide-left">
+                <img class="floating-img"
+                    src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1000&auto=format&fit=crop"
+                    alt="Fast Performance">
+            </div>
+        </div>
+    </section>
+
+    <!-- Zorin Connect Clone -->
+    <section class="feature connect-feature" id="pro">
+        <div class="section-title fade-in-up">
+            <h2>Your phone and computer<br>work as one with<br><strong>Piper Connect<span class="dot">.</span></strong>
+            </h2>
+            <p>Piper Connect is integrated into the Piper OS desktop to merge the experience<br>between your computer
+                and Android device. It works over an encrypted connection<br>on your local network, so your data stays
+                private and doesn't reach the cloud.</p>
+        </div>
+
+        <div class="grid-cards fade-in-up delay-1">
+            <div class="card">
+                <h3>Sync notifications and messages<br>between devices.</h3>
+                <div class="card-image-box">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80"
+                        alt="Sync">
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Send files and photos between<br>your phone and computer.</h3>
+                <div class="card-image-box">
+                    <img src="https://images.unsplash.com/photo-1593642702821-c823b13eb295?auto=format&fit=crop&w=500&q=80"
+                        alt="Files">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section (Functional) -->
+    <section class="download-section" id="download">
+        <div class="download-card bounce-in">
+            <h2>Get Piper OS 1.0</h2>
+            <p class="subtitle">Version 1.0 Core • 64-bit • ISO size ~2.5GB</p>
+
+            <a href="../distro/piper-os-live.iso" download="piper-os-live.iso" class="btn btn-action btn-download">
+                Download ISO
+            </a>
+            <small>Free to download, free to use, forever.</small>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="brand">
+                <img src="logo.png" alt="Piper OS" style="height: 24px; width: auto; margin-right: 6px;">
+                <strong>PIPER <span>OS</span></strong>
+            </div>
+            <div class="links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Animations -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.slide-right, .slide-left, .fade-in-up, .bounce-in').forEach((el) => {
+            observer.observe(el);
+            el.style.opacity = '0';
+        });
+    </script>
+</body>
+
+</html>

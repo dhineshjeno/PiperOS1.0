@@ -1,0 +1,11 @@
+PRETTY_NAME="Piper OS 1.0"
+NAME="Piper OS"
+VERSION_ID="1.0"
+VERSION="1.0 (Rattenfänger)"
+VERSION_CODENAME=rattenfanger
+ID=piperos
+ID_LIKE=ubuntu debian
+HOME_URL="https://github.com/dhineshjeno/Linux-Kernel-OS"
+SUPPORT_URL="https://github.com/dhineshjeno/Linux-Kernel-OS/issues"
+BUG_REPORT_URL="https://github.com/dhineshjeno/Linux-Kernel-OS/issues"
+LOGO=piperos-logo

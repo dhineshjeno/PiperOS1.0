@@ -1,0 +1,75 @@
+# ===========================================
+# Piper OS — Package List (KDE Plasma)
+# ===========================================
+
+# --- Linux Kernel ---
+linux-generic
+
+# --- Desktop Environment (KDE Plasma) ---
+xserver-xorg
+kde-plasma-desktop
+plasma-nm
+plasma-pa
+
+# --- Display Manager ---
+sddm
+
+# --- System Essentials ---
+sudo
+network-manager
+wpasupplicant
+wireless-tools
+iw
+pulseaudio
+pavucontrol
+bluez
+bluedevil
+
+# --- File Manager ---
+dolphin
+ark
+
+# --- Web Browser ---
+firefox
+
+# --- Text Editor ---
+kate
+
+# --- Terminal & Shell ---
+bash
+bash-completion
+konsole
+
+# --- System Utilities ---
+partitionmanager
+synaptic
+htop
+neofetch
+
+# --- Appearance ---
+papirus-icon-theme
+fonts-noto
+fonts-ubuntu
+
+# --- Media ---
+vlc
+gwenview
+
+# --- Networking ---
+wget
+curl
+openssh-client
+kdeconnect
+
+# --- Live System Support ---
+casper
+discover
+laptop-detect
+os-prober
+
+# --- Plymouth (Boot Splash) ---
+plymouth
+plymouth-themes
+
+# --- Firmware ---
+linux-firmware

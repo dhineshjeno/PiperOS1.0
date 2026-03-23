@@ -1,0 +1,469 @@
+:root {
+    --bg-color: #ffffff;
+    --text-primary: #1e1e1e;
+    --text-secondary: #6B7280;
+    --primary-color: #1FA5FE;
+    /* Zorin style vibrant blue */
+    --hover-color: #0d8add;
+    --card-bg: #f9f9fb;
+    --border-color: #f3f4f6;
+    --btn-shadow: 0 4px 14px rgba(31, 165, 254, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--text-primary);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: 0.1em;
+}
+
+.brand-logo {
+    margin-right: 4px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    transition: color 0.1s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text-primary);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+}
+
+.btn-action {
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+    box-shadow: var(--btn-shadow);
+}
+
+.btn:hover {
+    background: var(--hover-color);
+    transform: translateY(-1px);
+}
+
+/* Hero Section */
+.hero {
+    padding: 220px 2rem 50px;
+    text-align: center;
+    background: radial-gradient(circle at top, #fdfdfd, #ffffff);
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f1f5f9;
+    padding: 4px 16px 4px 6px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.badge span {
+    background: #334155;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    color: #94A3B8;
+    /* Zorin grey out */
+}
+
+.hero h1 strong {
+    color: var(--text-primary);
+    /* Bold black */
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin: 0 auto 3rem;
+}
+
+/* Laptop Focus */
+.laptop-container {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+}
+
+.laptop-img {
+    max-width: 100%;
+    width: 900px;
+    border-radius: 20px;
+    /* Soft shadow instead of heavy mockup */
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.1);
+}
+
+/* Feature Zorin Clone Layout */
+.feature {
+    padding: 12rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6rem;
+}
+
+.text-block h2 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    color: #cbd5e1;
+}
+
+.text-block h2 strong {
+    color: var(--text-primary);
+}
+
+.text-block p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 400px;
+}
+
+.inline-logo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.image-block .floating-img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.08);
+}
+
+/* Connect Section */
+.connect-feature {
+    text-align: center;
+}
+
+.section-title {
+    margin: 0 auto 5rem;
+}
+
+.section-title h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #94A3B8;
+}
+
+.section-title h2 strong {
+    color: var(--text-primary);
+}
+
+.section-title .dot {
+    color: #64748b;
+}
+
+.section-title p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.grid-cards {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.card {
+    text-align: center;
+    flex: 1;
+    max-width: 450px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.card-image-box {
+    background: var(--card-bg);
+    border-radius: 24px;
+    padding: 2rem 2rem 0;
+    display: inline-block;
+    /* Cuts off the bottom naturally like a mockup edge */
+    overflow: hidden;
+}
+
+.card-image-box img {
+    border-radius: 12px 12px 0 0;
+    display: block;
+    width: 100%;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Download Section */
+.download-section {
+    background: #f8fafc;
+    padding: 8rem 2rem;
+    text-align: center;
+}
+
+.download-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+
+.btn-download {
+    margin-bottom: 1.5rem;
+}
+
+.download-card small {
+    display: block;
+    color: var(--text-secondary);
+}
+
+/* Footer Minimal */
+footer {
+    padding: 4rem 2rem;
+    background: #ffffff;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.footer-content .brand span {
+    font-weight: 500;
+}
+
+.footer-content .links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.footer-content .links a {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.footer-content .links a:hover {
+    color: var(--text-primary);
+}
+
+/* Animations Core */
+.slide-right.visible {
+    animation: slideRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slide-left.visible {
+    animation: slideLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-in-up.visible {
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.bounce-in.visible {
+    animation: bounceIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+.delay-4 {
+    animation-delay: 0.4s;
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.01);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .feature-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-block p {
+        margin: 0 auto;
+    }
+
+    .grid-cards {
+        flex-direction: column;
+    }
+}
