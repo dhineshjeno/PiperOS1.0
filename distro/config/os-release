@@ -1,8 +1,8 @@
-PRETTY_NAME="Piper OS 1.0"
-NAME="Piper OS"
-VERSION_ID="1.0"
-VERSION="1.0 (Rattenfänger)"
-VERSION_CODENAME=rattenfanger
+PRETTY_NAME="Piper OS 1.1 Focus Edition"
+NAME="Piper OS Focus"
+VERSION_ID="1.1"
+VERSION="1.1 (Focus)"
+VERSION_CODENAME=focus
 ID=piperos
 ID_LIKE=ubuntu debian
 HOME_URL="https://github.com/dhineshjeno/Linux-Kernel-OS"

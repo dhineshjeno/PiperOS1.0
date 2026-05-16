@@ -1,5 +1,5 @@
 # ===========================================
-# Piper OS — Package List (KDE Plasma)
+# Piper OS — Focus Edition (Student-Centric)
 # ===========================================
 
 # --- Linux Kernel ---
@@ -39,21 +39,24 @@ kate
 bash
 bash-completion
 konsole
+fastfetch
+python3-pil
 
-# --- System Utilities ---
-partitionmanager
-synaptic
-htop
-neofetch
+# --- Student Productivity & Study Tools ---
+anki
+libreoffice-calc
+libreoffice-writer
+gnome-clocks
+vlc
+gwenview
+kde-spectacle
 
-# --- Appearance ---
+# --- Appearance & Aesthetic ---
 papirus-icon-theme
 fonts-noto
 fonts-ubuntu
-
-# --- Media ---
-vlc
-gwenview
+fonts-inter-variable
+# latte-dock (Not available in Noble)
 
 # --- Networking ---
 wget
@@ -73,3 +76,10 @@ plymouth-themes
 
 # --- Firmware ---
 linux-firmware
+
+# --- Development Tools ---
+build-essential
+gcc
+make
+python3
+python3-pip

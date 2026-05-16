@@ -4,156 +4,527 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piper OS - The Alternative to Windows and macOS</title>
-
-    <!-- Google Fonts -->
+    <title>Piper OS — Focus Edition</title>
+    <meta name="description"
+        content="Piper OS Focus Edition — A fast, clean Linux OS with a built-in Focus mode. Eliminate distractions and do your best work, whatever that looks like.">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
 
-    <!-- Minimal Settings Navigation -->
-    <nav class="navbar">
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="logo">
-                <!-- Pied Piper Custom Logo -->
-                <img src="logo.png" alt="Piper OS Logo" style="height: 36px; width: auto; margin-right: 8px;">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="16" r="16" fill="#3b82f6" />
+                    <path d="M10 16C10 12.686 12.686 10 16 10C19.314 10 22 12.686 22 16" stroke="white"
+                        stroke-width="2.5" stroke-linecap="round" />
+                    <circle cx="16" cy="16" r="3" fill="white" />
+                    <path d="M16 10V7M16 25v-3M10 16H7M25 16h-3" stroke="white" stroke-width="2"
+                        stroke-linecap="round" />
+                </svg>
                 <span>PIPER OS</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#overview" class="active">Overview</a></li>
-                <li><a href="#features">For Schools</a></li>
-                <li><a href="#pro">Pro</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#apps">Apps</a></li>
+                <li><a href="#specs">Requirements</a></li>
+                <li><a href="https://github.com/dhineshjeno/Linux-Kernel-OS" target="_blank">GitHub</a></li>
             </ul>
-            <a href="#download" class="btn btn-primary nav-btn">Download</a>
+            <div class="nav-right">
+                <a href="#download" class="btn btn-outline-nav">Download Free</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Super Clean Zorin-Style Hero -->
-    <section class="hero" id="overview">
-        <div class="hero-content">
-            <div class="badge fade-in-up"><span>NEW</span> Upgrades from Piper OS 0.9 to 1.0 are now available &rsaquo;
+    <main>
+
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="home">
+            <div class="hero-bg-orb orb-1"></div>
+            <div class="hero-bg-orb orb-2"></div>
+            <div class="hero-content">
+                <div class="hero-badge reveal">
+                    <span class="badge-dot"></span>
+                    Version 1.1 &mdash; Now Available
+                </div>
+                <h1 class="reveal" style="animation-delay:0.08s">A Linux OS that<br>just <em>works.</em></h1>
+                <p class="hero-sub reveal" style="animation-delay:0.16s">Piper OS is fast, minimal, and beautiful. No
+                    bloat, no noise, no nonsense &mdash; just a clean base to do whatever you do, better.</p>
+                <div class="hero-actions reveal" style="animation-delay:0.24s">
+                    <a href="#download" class="btn btn-primary btn-lg">
+                        <i data-lucide="download" style="width:18px;height:18px;"></i>
+                        Download Piper OS 1.1
+                    </a>
+                    <a href="#features" class="btn btn-ghost btn-lg">
+                        Explore Features
+                        <i data-lucide="arrow-right" style="width:18px;height:18px;"></i>
+                    </a>
+                </div>
+                <p class="hero-meta reveal" style="animation-delay:0.32s">Free forever • Open source • Based on Ubuntu
+                    24.04 LTS</p>
             </div>
-            <h1 class="fade-in-up delay-1">Make your computer<br><strong>better.</strong></h1>
-            <p class="fade-in-up delay-2">Piper OS is the alternative to Windows and macOS designed to make<br>your
-                computer faster, more powerful, secure, and privacy-respecting.</p>
-
-            <a href="#download" class="btn btn-action fade-in-up delay-3">Download Piper OS</a>
-        </div>
-
-        <div class="laptop-container fade-in-up delay-4">
-            <img class="laptop-img"
-                src="https://images.unsplash.com/photo-1629654229648-52261ce8d0ad?q=80&w=1200&auto=format&fit=crop"
-                alt="Piper OS Desktop Environment">
-        </div>
-    </section>
-
-    <!-- Speed Section -->
-    <section class="feature speed-feature" id="features">
-        <div class="feature-content">
-            <div class="text-block slide-right">
-                <h2>Less <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="inline-logo">
-                        <path d="M4 4h9a6 6 0 0 1 0 12h-5v4H4V4z" fill="#9ca3af" />
-                    </svg><br><strong>More Speed.</strong></h2>
-                <p>Your computer should work as fast as you do. Piper OS runs lightning quick and doesn't slow down over
-                    time. Apps open fast, so you can spend more time being productive.</p>
-            </div>
-            <div class="image-block slide-left">
-                <img class="floating-img"
-                    src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1000&auto=format&fit=crop"
-                    alt="Fast Performance">
-            </div>
-        </div>
-    </section>
-
-    <!-- Zorin Connect Clone -->
-    <section class="feature connect-feature" id="pro">
-        <div class="section-title fade-in-up">
-            <h2>Your phone and computer<br>work as one with<br><strong>Piper Connect<span class="dot">.</span></strong>
-            </h2>
-            <p>Piper Connect is integrated into the Piper OS desktop to merge the experience<br>between your computer
-                and Android device. It works over an encrypted connection<br>on your local network, so your data stays
-                private and doesn't reach the cloud.</p>
-        </div>
-
-        <div class="grid-cards fade-in-up delay-1">
-            <div class="card">
-                <h3>Sync notifications and messages<br>between devices.</h3>
-                <div class="card-image-box">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80"
-                        alt="Sync">
+            <div class="hero-screenshot-container reveal" style="animation-delay:0.4s">
+                <div class="screenshot-glow"></div>
+                <div class="screenshot-frame">
+                    <div class="frame-bar">
+                        <span class="frame-dot" style="background:#ff5f57"></span>
+                        <span class="frame-dot" style="background:#febc2e"></span>
+                        <span class="frame-dot" style="background:#28c840"></span>
+                        <span class="frame-title">Piper OS — Focus Edition</span>
+                    </div>
+                    <img src="desktop.png" alt="Piper OS Desktop Environment" class="hero-img">
                 </div>
             </div>
+        </section>
 
-            <div class="card">
-                <h3>Send files and photos between<br>your phone and computer.</h3>
-                <div class="card-image-box">
-                    <img src="https://images.unsplash.com/photo-1593642702821-c823b13eb295?auto=format&fit=crop&w=500&q=80"
-                        alt="Files">
+        <!-- ===== STATS BAR ===== -->
+        <section class="stats-bar">
+            <div class="stats-container">
+                <div class="stat reveal">
+                    <span class="stat-number">1.1</span>
+                    <span class="stat-label">Current Version</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat reveal" style="animation-delay:0.1s">
+                    <span class="stat-number">~2.5GB</span>
+                    <span class="stat-label">ISO Size</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat reveal" style="animation-delay:0.2s">
+                    <span class="stat-number">Ubuntu 24.04</span>
+                    <span class="stat-label">Built On</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat reveal" style="animation-delay:0.3s">
+                    <span class="stat-number">KDE Plasma</span>
+                    <span class="stat-label">Desktop</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat reveal" style="animation-delay:0.4s">
+                    <span class="stat-number">100% Free</span>
+                    <span class="stat-label">Always &amp; Forever</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FEATURES ===== -->
+        <section class="section features" id="features">
+            <div class="section-header reveal">
+                <p class="section-eyebrow">Why Piper OS?</p>
+                <h2>Built different.<br>By design.</h2>
+                <p class="section-sub">Every pixel, every kernel tweak, every default — chosen with one goal: maximum
+                    performance with minimum friction, so you can put all your energy into what actually matters.</p>
+            </div>
+
+            <div class="feature-bento reveal" style="animation-delay:0.1s">
+
+                <!-- Big Card Left -->
+                <div class="bento-card bento-big"
+                    style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);">
+                    <div class="bento-icon" style="background:#3b82f6"><i data-lucide="zap" style="color:white"></i>
+                    </div>
+                    <h3>Blazing Fast Performance</h3>
+                    <p>Piper OS boots in seconds and stays snappy no matter what you throw at it. Stripped of bloat,
+                        every cycle goes to you — not the OS.</p>
+                    <div class="perf-bars">
+                        <div class="perf-row">
+                            <span>Boot Time</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width:85%;background:#3b82f6"></div>
+                            </div>
+                            <span class="perf-val">~8s</span>
+                        </div>
+                        <div class="perf-row">
+                            <span>RAM at Idle</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width:40%;background:#3b82f6"></div>
+                            </div>
+                            <span class="perf-val">~800MB</span>
+                        </div>
+                        <div class="perf-row">
+                            <span>App Launch</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width:90%;background:#3b82f6"></div>
+                            </div>
+                            <span class="perf-val">Instant</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right column stacked -->
+                <div class="bento-stack">
+                    <div class="bento-card bento-small"
+                        style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);">
+                        <div class="bento-icon" style="background:#22c55e"><i data-lucide="shield-check"
+                                style="color:white"></i></div>
+                        <h3>Secure &amp; Private</h3>
+                        <p>Zero telemetry. Your data stays on your machine — always.</p>
+                    </div>
+                    <div class="bento-card bento-small"
+                        style="background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);">
+                        <div class="bento-icon" style="background:#a855f7"><i data-lucide="palette"
+                                style="color:white"></i></div>
+                        <h3>Stunning Aesthetics</h3>
+                        <p>KDE Plasma with a refined dark theme. Looks premium out of the box.</p>
+                    </div>
+                </div>
+
+                <!-- Bottom row -->
+                <div class="bento-card bento-wide"
+                    style="background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);">
+                    <div class="bento-icon" style="background:#f97316"><i data-lucide="wifi" style="color:white"></i>
+                    </div>
+                    <div>
+                        <h3>Piper Connect</h3>
+                        <p>Bridge your phone and laptop seamlessly. Send files, mirror notifications, and control your
+                            device — without breaking your flow.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card bento-wide"
+                    style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);">
+                    <div class="bento-icon" style="background:#0ea5e9"><i data-lucide="crosshair"
+                            style="color:white"></i></div>
+                    <div>
+                        <h3>Focus Mode</h3>
+                        <p>A built-in mode that clears distractions and sharpens your environment. One command and
+                            everything else falls away.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== APP SPOTLIGHT ===== -->
+        <section class="section apps-section" id="apps">
+            <div class="section-header reveal">
+                <p class="section-eyebrow">Pre-Installed Apps</p>
+                <h2>Ready to go.<br>Day one.</h2>
+                <p class="section-sub">Piper OS ships with a curated set of apps that cover real use cases — no trials,
+                    no bloatware, no junk. Just tools that work.</p>
+            </div>
+            <div class="apps-grid reveal" style="animation-delay:0.1s">
+                <div class="app-card">
+                    <div class="app-icon" style="background:linear-gradient(135deg,#1ed760,#059669)">
+                        <i data-lucide="music" style="color:white;width:28px;height:28px;"></i>
+                    </div>
+                    <h4>Spotify</h4>
+                    <p>Music for every mode — lofi, hype, chill</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon" style="background:linear-gradient(135deg,#a78bfa,#7c3aed)">
+                        <i data-lucide="layers" style="color:white;width:28px;height:28px;"></i>
+                    </div>
+                    <h4>Anki</h4>
+                    <p>Retention-first knowledge tool</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon" style="background:linear-gradient(135deg,#f97316,#ea580c)">
+                        <i data-lucide="file-text" style="color:white;width:28px;height:28px;"></i>
+                    </div>
+                    <h4>LibreOffice</h4>
+                    <p>Writer, Calc &amp; more</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon" style="background:linear-gradient(135deg,#fb923c,#e11d48)">
+                        <i data-lucide="globe" style="color:white;width:28px;height:28px;"></i>
+                    </div>
+                    <h4>Firefox</h4>
+                    <p>Fast, private browsing</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon" style="background:linear-gradient(135deg,#38bdf8,#0284c7)">
+                        <i data-lucide="code-2" style="color:white;width:28px;height:28px;"></i>
+                    </div>
+                    <h4>Kate Editor</h4>
+                    <p>Focused, powerful text editing</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon" style="background:linear-gradient(135deg,#34d399,#059669)">
+                        <i data-lucide="clock" style="color:white;width:28px;height:28px;"></i>
+                    </div>
+                    <h4>GNOME Clocks</h4>
+                    <p>Timers, alarms &amp; world clock</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon" style="background:linear-gradient(135deg,#f472b6,#db2777)">
+                        <i data-lucide="video" style="color:white;width:28px;height:28px;"></i>
+                    </div>
+                    <h4>VLC</h4>
+                    <p>Play any media file instantly</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon" style="background:linear-gradient(135deg,#818cf8,#4f46e5)">
+                        <i data-lucide="terminal" style="color:white;width:28px;height:28px;"></i>
+                    </div>
+                    <h4>Konsole</h4>
+                    <p>Fast, minimal terminal with Focus shell</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SPOTLIGHT SECTION ===== -->
+        <section class="section spotlight">
+            <div class="spotlight-inner reveal">
+                <div class="spotlight-text">
+                    <p class="section-eyebrow">Focus Mode</p>
+                    <h2>Your terminal. <em>Reimagined.</em></h2>
+                    <p>Every time you open Konsole, Piper OS greets you with a branded system overview via
+                        <strong>fastfetch</strong>, quick-access study aliases, and a minimalist prompt that gets out of
+                        your way.</p>
+                    <ul class="spotlight-list">
+                        <li><i data-lucide="check-circle-2" style="color:#22c55e;width:18px;height:18px;"></i>
+                            <code>focus-mode</code> — silence distractions, launch your flow</li>
+                        <li><i data-lucide="check-circle-2" style="color:#22c55e;width:18px;height:18px;"></i>
+                            <code>clocks</code> — launch a timer for any kind of session</li>
+                        <li><i data-lucide="check-circle-2" style="color:#22c55e;width:18px;height:18px;"></i>
+                            <code>spotify</code> — open your go-to playlist instantly</li>
+                        <li><i data-lucide="check-circle-2" style="color:#22c55e;width:18px;height:18px;"></i>
+                            <code>neofetch</code> — flex your system stats any time</li>
+                    </ul>
+                </div>
+                <div class="spotlight-terminal">
+                    <div class="terminal-bar">
+                        <span class="frame-dot" style="background:#ff5f57"></span>
+                        <span class="frame-dot" style="background:#febc2e"></span>
+                        <span class="frame-dot" style="background:#28c840"></span>
+                        <span style="color:#94a3b8;font-size:0.75rem;margin-left:auto">Konsole &mdash;
+                            piper@piperos</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="t-line"><span class="t-prompt">&lambda; ~</span> <span
+                                class="t-cmd">fastfetch</span></div>
+                        <div class="t-info">
+                            <div class="t-logo">
+                                <pre style="color:#3b82f6;font-size:0.55rem;line-height:1.3">
+  ____  _                 
+|  _ \(_)_ __   ___ _ __ 
+| |_) | | '_ \ / _ \ '__|
+|  __/| | |_) |  __/ |   
+|_|   |_| .__/ \___|_|   
+        |_|   [Piper OS v1.1]
+                                </pre>
+                            </div>
+                            <div class="t-details">
+                                <div><span class="t-key">OS</span> <span class="t-val">Piper OS 1.1 Focus</span></div>
+                                <div><span class="t-key">DE</span> <span class="t-val">KDE Plasma 6</span></div>
+                                <div><span class="t-key">Shell</span> <span class="t-val">bash 5.2.21</span></div>
+                                <div><span class="t-key">Kernel</span> <span class="t-val">Linux 6.8.0-generic</span>
+                                </div>
+                                <div><span class="t-key">Memory</span> <span class="t-val">842MB / 8192MB</span></div>
+                            </div>
+                        </div>
+                        <div class="t-line" style="margin-top:0.8rem"><span class="t-dim">Welcome to Piper OS [Focus
+                                Edition]</span></div>
+                        <div class="t-line"><span class="t-dim">Distraction-Free Tools: </span><span
+                                class="t-cmd-small">spotify anki clocks kate</span></div>
+                        <div class="t-line" style="margin-top:0.8rem"><span class="t-prompt">&lambda; ~</span> <span
+                                class="t-cursor">&block;</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SYSTEM REQUIREMENTS ===== -->
+        <section class="section specs-section" id="specs">
+            <div class="section-header reveal">
+                <p class="section-eyebrow">System Requirements</p>
+                <h2>Will it run on<br>your machine?</h2>
+                <p class="section-sub">Piper OS is designed to run on modern hardware, giving you the best experience
+                    without compromise.</p>
+            </div>
+            <div class="specs-grid reveal" style="animation-delay:0.1s">
+                <div class="spec-card">
+                    <div class="spec-icon"><i data-lucide="cpu"></i></div>
+                    <h4>Processor</h4>
+                    <div class="spec-row"><span class="spec-label">Minimum</span><span class="spec-value">Dual-core
+                            64-bit</span></div>
+                    <div class="spec-row recommended"><span class="spec-label">Recommended</span><span
+                            class="spec-value">Quad-core 2GHz+</span></div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon"><i data-lucide="memory-stick"></i></div>
+                    <h4>RAM</h4>
+                    <div class="spec-row"><span class="spec-label">Minimum</span><span class="spec-value">4 GB</span>
+                    </div>
+                    <div class="spec-row recommended"><span class="spec-label">Recommended</span><span
+                            class="spec-value">8 GB</span></div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon"><i data-lucide="hard-drive"></i></div>
+                    <h4>Storage</h4>
+                    <div class="spec-row"><span class="spec-label">Minimum</span><span class="spec-value">25 GB
+                            free</span></div>
+                    <div class="spec-row recommended"><span class="spec-label">Recommended</span><span
+                            class="spec-value">50 GB SSD</span></div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon"><i data-lucide="monitor"></i></div>
+                    <h4>Display</h4>
+                    <div class="spec-row"><span class="spec-label">Minimum</span><span class="spec-value">1024 ×
+                            768</span></div>
+                    <div class="spec-row recommended"><span class="spec-label">Recommended</span><span
+                            class="spec-value">1920 × 1080</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DOWNLOAD ===== -->
+        <section class="download-section" id="download">
+            <div class="download-bg-orb"></div>
+            <div class="download-content reveal">
+                <p class="section-eyebrow" style="color:#93c5fd">Get Started</p>
+                <h2>Download Piper OS<br><em>Focus Edition</em></h2>
+                <p>A complete, ready-to-use operating system. Fast, clean, and built to get out of your way. Free
+                    forever. No sign-ups. No strings attached.</p>
+                <div class="download-card-row">
+                    <div class="download-box">
+                        <div class="download-box-header">
+                            <i data-lucide="disc" style="width:24px;height:24px;color:#3b82f6"></i>
+                            <span>Live ISO</span>
+                            <span class="download-tag">Recommended</span>
+                        </div>
+                        <p class="download-desc">Boot from USB and try Piper OS without installing. Install when you're
+                            ready.</p>
+                        <div class="download-meta">
+                            <span><i data-lucide="file" style="width:14px;height:14px"></i> ~2.5 GB</span>
+                            <span><i data-lucide="cpu" style="width:14px;height:14px"></i> 64-bit</span>
+                            <span><i data-lucide="tag" style="width:14px;height:14px"></i> v1.1</span>
+                        </div>
+                        <a href="../distro/piper-os-live.iso" download="piper-os-1.1-focus.iso"
+                            class="btn btn-primary btn-full">
+                            <i data-lucide="download" style="width:18px;height:18px"></i>
+                            Download ISO (2.5 GB)
+                        </a>
+                        <p class="download-helper">SHA256 checksum available on GitHub</p>
+                    </div>
+                    <div class="download-box download-box-alt">
+                        <div class="download-box-header">
+                            <i data-lucide="github" style="width:24px;height:24px;color:#94a3b8"></i>
+                            <span>Source Code</span>
+                        </div>
+                        <p class="download-desc">Clone the build scripts, fork the repo, and build your own custom
+                            version of Piper OS.</p>
+                        <div class="download-meta">
+                            <span><i data-lucide="git-branch" style="width:14px;height:14px"></i> main</span>
+                            <span><i data-lucide="code-2" style="width:14px;height:14px"></i> Bash</span>
+                        </div>
+                        <a href="https://github.com/dhineshjeno/Linux-Kernel-OS" target="_blank"
+                            class="btn btn-ghost-dark btn-full">
+                            <i data-lucide="github" style="width:18px;height:18px"></i>
+                            View on GitHub
+                        </a>
+                        <p class="download-helper">MIT Licensed — free to use and modify</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="16" fill="#3b82f6" />
+                        <path d="M10 16C10 12.686 12.686 10 16 10C19.314 10 22 12.686 22 16" stroke="white"
+                            stroke-width="2.5" stroke-linecap="round" />
+                        <circle cx="16" cy="16" r="3" fill="white" />
+                    </svg>
+                    <span>PIPER OS</span>
+                </div>
+                <p>A distraction-free Linux distribution<br>built for students and creators.</p>
+            </div>
+            <div class="footer-links-grid">
+                <div class="footer-col">
+                    <h5>Product</h5>
+                    <a href="#features">Features</a>
+                    <a href="#apps">Apps</a>
+                    <a href="#specs">Requirements</a>
+                    <a href="#download">Download</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Community</h5>
+                    <a href="https://github.com/dhineshjeno/Linux-Kernel-OS" target="_blank">GitHub</a>
+                    <a href="#">Bug Reports</a>
+                    <a href="#">Discussions</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Legal</h5>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Open Source Licenses</a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Download Section (Functional) -->
-    <section class="download-section" id="download">
-        <div class="download-card bounce-in">
-            <h2>Get Piper OS 1.0</h2>
-            <p class="subtitle">Version 1.0 Core • 64-bit • ISO size ~2.5GB</p>
-
-            <a href="../distro/piper-os-live.iso" download="piper-os-live.iso" class="btn btn-action btn-download">
-                Download ISO
-            </a>
-            <small>Free to download, free to use, forever.</small>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="brand">
-                <img src="logo.png" alt="Piper OS" style="height: 24px; width: auto; margin-right: 6px;">
-                <strong>PIPER <span>OS</span></strong>
-            </div>
-            <div class="links">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-                <a href="#">GitHub</a>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Piper OS Project. Built with ❤️ on Ubuntu 24.04 Noble Numbat.</p>
+            <p>Piper OS is open source software under the MIT License.</p>
         </div>
     </footer>
 
-    <!-- Animations -->
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
+        // Init Lucide icons
+        lucide.createIcons();
+
+        // Navbar scroll glass effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
         });
 
-        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
-        const observer = new IntersectionObserver((entries, observer) => {
+        // Scroll reveal
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+                    revealObserver.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.08 });
 
-        document.querySelectorAll('.slide-right, .slide-left, .fade-in-up, .bounce-in').forEach((el) => {
-            observer.observe(el);
-            el.style.opacity = '0';
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
         });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Animate performance bars on reveal
+        const barObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.bar-fill').forEach(bar => {
+                        bar.style.transform = 'scaleX(1)';
+                    });
+                }
+            });
+        }, { threshold: 0.4 });
+
+        document.querySelectorAll('.perf-bars').forEach(el => barObserver.observe(el));
+
+        // Typewriter cursor blink
+        const cursor = document.querySelector('.t-cursor');
+        if (cursor) {
+            setInterval(() => cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0', 530);
+        }
     </script>
 </body>
 

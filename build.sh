@@ -40,26 +40,12 @@ echo "Building Piper OS ISO..."
 
 # Generate GRUB configuration
 cat > isodir/boot/grub/grub.cfg << EOF
-set timeout=10
+set timeout=0
 set default=0
-
-insmod all_video
-insmod png
-
-set theme=/boot/grub/themes/piper/theme.txt
-export theme
 
 menuentry "Piper OS" {
     multiboot /boot/kernel.bin
     boot
-}
-
-menuentry "Reboot" {
-    reboot
-}
-
-menuentry "Shutdown" {
-    halt
 }
 EOF
 

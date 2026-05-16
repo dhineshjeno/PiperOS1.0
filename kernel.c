@@ -172,114 +172,117 @@ void kernel_main(void)
     // Enable Interrupts
     asm volatile("sti");
 
-    // Initial boot sequence feel
-    terminal_setcolor(vga_entry_color(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK));
-    terminal_writestring("Booting Piper OS Kernel...\n");
-    sleep(200);
-    terminal_writestring("Initializing memory manager... [OK]\n");
-    sleep(100);
-    terminal_writestring("Loading drivers... [OK]\n");
-    sleep(100);
-    terminal_writestring("Establishing uplink... [OK]\n");
-    sleep(300);
-    
-    // Clear screen for the main reveal
+    // ── Clean Piper OS Boot Animation ─────────────────────────────────────
+    uint8_t col_cyan  = vga_entry_color(VGA_COLOR_LIGHT_CYAN,  VGA_COLOR_BLACK);
+    uint8_t col_white = vga_entry_color(VGA_COLOR_WHITE,        VGA_COLOR_BLACK);
+    uint8_t col_green = vga_entry_color(VGA_COLOR_LIGHT_GREEN,  VGA_COLOR_BLACK);
+    uint8_t col_grey  = vga_entry_color(VGA_COLOR_LIGHT_GREY,   VGA_COLOR_BLACK);
+
     terminal_clear();
-    sleep(200);
 
-    // Pied Piper "Assembly" Animation (Windows 10 Style Logic)
-    
-    terminal_clear();
-    
-    // The Final Pied Piper Logo (Text + Icon)
-    // We split this into 4 logical quadrants for the "Colored Assembly" animation
-    
-    // Quadrant 1 (Top-Left) - Red
-    const char* q1[] = {
-        "       _           _ ",
-        " _ __ (_) ___   __| |",
-        "| '_ \\| |/ _ \\ / _` |"
-    };
-    
-    // Quadrant 2 (Top-Right: The Guy/Hat) - Blue
-    const char* q2[] = {
-        "    /^\\",
-        "   /   \\  <-.",
-        "   | ^ |____|"
-    };
+    terminal_setcolor(col_cyan);
+    terminal_writestring("+==============================================+\n");
+    terminal_setcolor(col_white);
+    terminal_writestring("|              PIPER OS v0.1                   |\n");
+    terminal_setcolor(col_cyan);
+    terminal_writestring("+==============================================+\n\n");
 
-    // Quadrant 3 (Bottom-Left) - Yellow
-    const char* q3[] = {
-        "| |_) | |  __/| (_| |",
-        "| .__/|_|\\___| \\__,_|",
-        "|_|                  "
-    };
+    terminal_setcolor(col_green);
+    terminal_writestring("   _____ _                 \n");
+    terminal_writestring("  |  __ (_)                \n");
+    terminal_writestring("  | |__) | | ___ _ __ _ __ \n");
+    terminal_writestring("  |  ___/ |/ _ \\ '__| '__|\n");
+    terminal_writestring("  | |   | |  __/ |  | |   \n");
+    terminal_writestring("  |_|   |_|\\___|_|  |_|   \n");
+    terminal_writestring("     Operating System\n\n");
 
-    // Quadrant 4 (Bottom-Right: Pipe/Text) - Green (initially Magenta)
-    const char* q4[] = {
-        "   | O |",
-        " p i p e r",
-        "   |___|"
+    struct { const char* label; } checks[] = {
+        { "[BIOS] Checking pipes...         " },
+        { "[CPU ] Initializing core flow... " },
+        { "[MEM ] Pipe RAM detected         " },
+        { "[KBD ] Keyboard pipes ready      " },
+        { "[IRQ ] Interrupt lines active    " },
     };
-
-    int start_y = VGA_HEIGHT / 2 - 4;
-    int start_x = VGA_WIDTH / 2 - 15;
-    
-    // Step 1: Animate Quadrant 1 (Top Left) flying in from Top-Left corner
-    // Simplified: Just appear in Red
-    for(int i=0; i<3; i++) {
-        terminal_putentryat_string(q1[i], vga_entry_color(VGA_COLOR_LIGHT_RED, VGA_COLOR_BLACK), start_x, start_y + i);
-        sleep(100);
-    }
-    
-    // Step 2: Animate Quadrant 2 (Top Right) flying in from Top-Right corner
-    // Simplified: Just appear in Light Blue
-    for(int i=0; i<3; i++) {
-        terminal_putentryat_string(q2[i], vga_entry_color(VGA_COLOR_LIGHT_BLUE, VGA_COLOR_BLACK), start_x + 22, start_y + i);
-        sleep(100);
+    for (int i = 0; i < 5; i++) {
+        terminal_setcolor(col_grey);
+        terminal_writestring(checks[i].label);
+        sleep(120);
+        terminal_setcolor(col_green);
+        terminal_writestring(" OK\n");
     }
 
-    // Step 3: Animate Quadrant 3 (Bottom Left) flying in from Bottom-Left
-    // Simplified: Just appear in Yellow
-    for(int i=0; i<3; i++) {
-        terminal_putentryat_string(q3[i], vga_entry_color(VGA_COLOR_LIGHT_BROWN, VGA_COLOR_BLACK), start_x, start_y + 3 + i);
-        sleep(100);
+    terminal_setcolor(col_cyan);
+    terminal_writestring("\nBooting Kernel [");
+    for (int i = 0; i < 30; i++) {
+        terminal_setcolor(col_green);
+        terminal_putchar('=');
+        sleep(40);
     }
+    terminal_setcolor(col_cyan);
+    terminal_writestring("] 100%\n\n");
 
-    // Step 4: Animate Quadrant 4 (Bottom Right) flying in from Bottom-Right
-    // Simplified: Just appear in Magenta
-    for(int i=0; i<3; i++) {
-        terminal_putentryat_string(q4[i], vga_entry_color(VGA_COLOR_LIGHT_MAGENTA, VGA_COLOR_BLACK), start_x + 22, start_y + 3 + i);
-        sleep(100);
-    }
-    
-    sleep(500);
-    
-    // Step 5: "Fusion" - Flash everything to Pied Piper Green
-    // We redraw the whole thing in Green
-    
-    // Q1
-    for(int i=0; i<3; i++) terminal_putentryat_string(q1[i], vga_entry_color(VGA_COLOR_LIGHT_GREEN, VGA_COLOR_BLACK), start_x, start_y + i);
-    // Q2
-    for(int i=0; i<3; i++) terminal_putentryat_string(q2[i], vga_entry_color(VGA_COLOR_LIGHT_GREEN, VGA_COLOR_BLACK), start_x + 22, start_y + i);
-    // Q3
-    for(int i=0; i<3; i++) terminal_putentryat_string(q3[i], vga_entry_color(VGA_COLOR_LIGHT_GREEN, VGA_COLOR_BLACK), start_x, start_y + 3 + i);
-    // Q4
-    for(int i=0; i<3; i++) terminal_putentryat_string(q4[i], vga_entry_color(VGA_COLOR_LIGHT_GREEN, VGA_COLOR_BLACK), start_x + 22, start_y + 3 + i);
+    terminal_setcolor(col_green);
+    terminal_writestring("Piper OS Kernel Loaded Successfully!\n\n");
+    // ── End of animation ──────────────────────────────────────────────────
 
-    sleep(500);
-
-    // Blinking cursor
-    terminal_row = start_y + 8;
-    terminal_column = (VGA_WIDTH / 2) - 1;
-    terminal_setcolor(vga_entry_color(VGA_COLOR_LIGHT_GREEN, VGA_COLOR_BLACK));
+    terminal_setcolor(col_green);
     terminal_writestring("> ");
-    keyboard_enable();
+    // Disable direct printing, shell will handle echo
+    keyboard_disable();
+    
+    char cmdbuf[256];
+    int cmdpos = 0;
     
     while(1) {
+        // Draw cursor
         terminal_putentryat('_', vga_entry_color(VGA_COLOR_LIGHT_GREEN, VGA_COLOR_BLACK), terminal_column, terminal_row);
-        sleep(500);
-        terminal_putentryat(' ', vga_entry_color(VGA_COLOR_LIGHT_GREEN, VGA_COLOR_BLACK), terminal_column, terminal_row);
-        sleep(500);
+        
+        char c = keyboard_get_char();
+        if (c != 0) {
+            // Remove cursor before echoing
+            terminal_putentryat(' ', vga_entry_color(VGA_COLOR_LIGHT_GREEN, VGA_COLOR_BLACK), terminal_column, terminal_row);
+            
+            if (c == '\n') {
+                terminal_putchar('\n');
+                cmdbuf[cmdpos] = '\0';
+                
+                // Process command
+                if (cmdpos > 0) {
+                    if (cmdbuf[0] == 'h' && cmdbuf[1] == 'e' && cmdbuf[2] == 'l' && cmdbuf[3] == 'p' && cmdbuf[4] == '\0') {
+                        terminal_writestring("Piper OS v0.1\n");
+                        terminal_writestring("Commands: help, clear, echo\n");
+                    } else if (cmdbuf[0] == 'c' && cmdbuf[1] == 'l' && cmdbuf[2] == 'e' && cmdbuf[3] == 'a' && cmdbuf[4] == 'r' && cmdbuf[5] == '\0') {
+                        terminal_clear();
+                    } else if (cmdbuf[0] == 'e' && cmdbuf[1] == 'c' && cmdbuf[2] == 'h' && cmdbuf[3] == 'o' && cmdbuf[4] == ' ') {
+                        terminal_writestring(&cmdbuf[5]);
+                        terminal_writestring("\n");
+                    } else {
+                        terminal_writestring("Command not found: ");
+                        terminal_writestring(cmdbuf);
+                        terminal_writestring("\n");
+                    }
+                }
+                
+                // Print prompt
+                terminal_setcolor(vga_entry_color(VGA_COLOR_LIGHT_GREEN, VGA_COLOR_BLACK));
+                terminal_writestring("> ");
+                cmdpos = 0;
+            } else if (c == '\b') {
+                if (cmdpos > 0) {
+                    cmdpos--;
+                    terminal_putchar('\b');
+                }
+            } else {
+                if (cmdpos < 255) {
+                    cmdbuf[cmdpos++] = c;
+                    terminal_putchar(c);
+                }
+            }
+        } else {
+            // Just small sleep so we don't hog CPU entirely
+            // No sleep is okay, but cursor blinking needs timing if we want it.
+            // Let's just do a tiny sleep
+            sleep(1);
+        }
     }
 }

@@ -47,17 +47,31 @@ extern void terminal_putchar(char c); // From kernel.c
 
 static int keyboard_printing_enabled = 0;
 
+#define KBD_BUFFER_SIZE 256
+volatile char kbd_buffer[KBD_BUFFER_SIZE];
+volatile int kbd_head = 0;
+volatile int kbd_tail = 0;
+
 void keyboard_enable(void) {
     keyboard_printing_enabled = 1;
+}
+
+void keyboard_disable(void) {
+    keyboard_printing_enabled = 0;
+}
+
+char keyboard_get_char(void) {
+    if (kbd_head == kbd_tail) {
+        return 0; // buffer empty
+    }
+    char c = kbd_buffer[kbd_tail];
+    kbd_tail = (kbd_tail + 1) % KBD_BUFFER_SIZE;
+    return c;
 }
 
 void keyboard_handler(registers_t *regs)
 {
     (void)regs;
-    
-    // Read status register
-    // uint8_t status = inb(0x64);
-    // If status & 0x1, buffer full.
     
     uint8_t scancode = inb(0x60);
     
@@ -71,8 +85,12 @@ void keyboard_handler(registers_t *regs)
         // Key press
         if (scancode < 128) {
             char c = kbdus[scancode];
-            if (c != 0 && keyboard_printing_enabled) {
-                terminal_putchar(c);
+            if (c != 0) {
+                if (keyboard_printing_enabled) {
+                    terminal_putchar(c);
+                }
+                kbd_buffer[kbd_head] = c;
+                kbd_head = (kbd_head + 1) % KBD_BUFFER_SIZE;
             }
         }
     }
